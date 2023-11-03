@@ -8,13 +8,16 @@ const listaDeTeclas = document.querySelectorAll('.tecla');
 let i = 0
 while (i < listaDeTeclas.length) {
 
+    const tecla = listaDeTeclas[i];
+    const instrumentos = tecla.classList[1];
 
-    console.log(i);
+    //Template string
+    let ids = `#som_${instrumentos}`
 
     //Funções anônimas no JS só podem ser utilizadas nesse contexto
     //Isto é, quando armazenamos dentro de uma variável
-    listaDeTeclas[i].onclick = function () {
-        TocaSom('#som_tecla_pom');
+    tecla.onclick = function () {
+        TocaSom(ids);
     };
     i++;
 }
